@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-const { index } = require("./controller");
+const { index, viewCreate, actionCreate } = require("./controller");
 
 // /* GET home page. */
 // router.get("/", function (req, res, next) {
@@ -9,5 +9,7 @@ const { index } = require("./controller");
 
 /* GET home page. */
 router.get("/", index);
+router.get("/create", viewCreate);
+router.post("/create", actionCreate);
 
 module.exports = router;
