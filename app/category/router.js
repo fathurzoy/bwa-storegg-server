@@ -14,7 +14,6 @@ const {
 //   res.render("index", { title: "Express" });
 // });
 
-/* GET home page. */
 router.get("/", index);
 router.get("/create", viewCreate);
 router.post("/create", actionCreate);
