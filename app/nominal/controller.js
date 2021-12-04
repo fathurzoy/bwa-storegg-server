@@ -95,22 +95,22 @@ module.exports = {
     }
   },
 
-  // actionDelete: async (req, res) => {
-  //   try {
-  //     const { id } = req.params;
+  actionDelete: async (req, res) => {
+    try {
+      const { id } = req.params;
 
-  //     const nominal = await Nominal.findOneAndRemove({
-  //       _id: id,
-  //     });
-  //     req.flash("alertMessage", "Berhasil hapus nominal");
-  //     req.flash("alertStatus", "success");
+      const nominal = await Nominal.findOneAndRemove({
+        _id: id,
+      });
+      req.flash("alertMessage", "Berhasil hapus nominal");
+      req.flash("alertStatus", "success");
 
-  //     res.redirect("/nominal");
-  //   } catch (err) {
-  //     req.flash("alertMessage", `${err.message}`);
-  //     req.flash("alertStatus", "danger");
-  //     res.redirect("/nominal");
-  //     // console.log(err);
-  //   }
-  // },
+      res.redirect("/nominal");
+    } catch (err) {
+      req.flash("alertMessage", `${err.message}`);
+      req.flash("alertStatus", "danger");
+      res.redirect("/nominal");
+      // console.log(err);
+    }
+  },
 };
