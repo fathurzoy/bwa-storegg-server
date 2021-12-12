@@ -95,22 +95,22 @@ module.exports = {
     }
   },
 
-  //   actionDelete: async (req, res) => {
-  //     try {
-  //       const { id } = req.params;
+  actionDelete: async (req, res) => {
+    try {
+      const { id } = req.params;
 
-  //       const bank = await Bank.findOneAndRemove({
-  //         _id: id,
-  //       });
-  //       req.flash("alertMessage", "Berhasil hapus bank");
-  //       req.flash("alertStatus", "success");
+      const bank = await Bank.findOneAndRemove({
+        _id: id,
+      });
+      req.flash("alertMessage", "Berhasil hapus bank");
+      req.flash("alertStatus", "success");
 
-  //       res.redirect("/bank");
-  //     } catch (err) {
-  //       req.flash("alertMessage", `${err.message}`);
-  //       req.flash("alertStatus", "danger");
-  //       res.redirect("/bank");
-  //       // console.log(err);
-  //     }
-  //   },
+      res.redirect("/bank");
+    } catch (err) {
+      req.flash("alertMessage", `${err.message}`);
+      req.flash("alertStatus", "danger");
+      res.redirect("/bank");
+      // console.log(err);
+    }
+  },
 };
