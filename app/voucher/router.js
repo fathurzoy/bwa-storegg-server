@@ -11,7 +11,9 @@ const {
 } = require("./controller");
 const multer = require("multer");
 const os = require("os");
+const { isLoginAdmin } = require("../middleware/auth");
 
+router.use(isLoginAdmin);
 router.get("/", index);
 router.get("/create", viewCreate);
 router.post(
