@@ -25,7 +25,6 @@ router.put(
   multer({ dest: os.tmpdir() }).single("image"),
   actionEdit
 );
-// router.delete("/delete/:id", actionDelete);
-// router.put("/status/:id", actionStatus);
+router.delete("/delete/:id", actionDelete);
 
 module.exports = router;
